@@ -7,6 +7,7 @@ interface HeroProps {
   subtitle: string;
   buttonText: string;
   buttonLink: string;
+  backgroundImage?: string;
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -14,13 +15,19 @@ const Hero: React.FC<HeroProps> = ({
   subtitle,
   buttonText,
   buttonLink,
+  backgroundImage = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3',
 }) => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Solid Background */}
-      <div className="absolute inset-0 z-0 bg-primary">
-        {/* Pattern overlay (optional) */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.4)_0,_rgba(255,255,255,0)_70%)]"></div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-dark bg-opacity-60"></div>
       </div>
 
       {/* Content */}
@@ -33,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({
         </p>
         <Link
           to={buttonLink}
-          className="btn-primary bg-white text-primary hover:bg-white/90 text-lg animate-fade-in"
+          className="btn-primary text-lg animate-fade-in"
         >
           {buttonText}
         </Link>
