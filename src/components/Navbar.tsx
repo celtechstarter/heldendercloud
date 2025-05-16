@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/0 py-5'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -30,58 +30,42 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link 
-            to="/leistungen" 
-            className={`font-medium transition-colors ${isScrolled ? 'text-dark-light' : 'text-white'} hover:text-primary`}
-          >
+          <Link to="/" className="text-dark-light hover:text-primary font-medium transition-colors">
+            Home
+          </Link>
+          <Link to="/leistungen" className="text-dark-light hover:text-primary font-medium transition-colors">
             Leistungen
           </Link>
-          <Link 
-            to="/ueber-uns" 
-            className={`font-medium transition-colors ${isScrolled ? 'text-dark-light' : 'text-white'} hover:text-primary`}
-          >
+          <Link to="/ueber-uns" className="text-dark-light hover:text-primary font-medium transition-colors">
             Über uns
           </Link>
-          <Link 
-            to="/blog" 
-            className={`font-medium transition-colors ${isScrolled ? 'text-dark-light' : 'text-white'} hover:text-primary`}
-          >
-            Blog
-          </Link>
-          <Link 
-            to="/kontakt" 
-            className={`font-medium transition-colors ${isScrolled ? 'text-dark-light' : 'text-white'} hover:text-primary`}
-          >
+          <Link to="/kontakt" className="text-dark-light hover:text-primary font-medium transition-colors">
             Kontakt
           </Link>
-          <Link 
-            to="/kontakt" 
-            className={`${
-              isScrolled 
-                ? 'bg-primary text-white hover:bg-primary-hover' 
-                : 'bg-white text-primary hover:bg-white/90'
-            } px-6 py-3 rounded-md transition-colors font-medium`}
-          >
+          <Link to="/kontakt" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-hover transition-colors">
             Projekt anfragen
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden z-10" 
+          className="md:hidden text-dark-light z-10" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? (
-            <X size={24} className="text-dark" />
-          ) : (
-            <Menu size={24} className={isScrolled ? 'text-dark' : 'text-white'} />
-          )}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-white flex flex-col items-center justify-center">
             <nav className="flex flex-col items-center space-y-8">
+              <Link 
+                to="/" 
+                className="text-xl text-dark-light hover:text-primary font-medium transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link 
                 to="/leistungen" 
                 className="text-xl text-dark-light hover:text-primary font-medium transition-colors"
@@ -95,13 +79,6 @@ const Navbar: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Über uns
-              </Link>
-              <Link 
-                to="/blog" 
-                className="text-xl text-dark-light hover:text-primary font-medium transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Blog
               </Link>
               <Link 
                 to="/kontakt" 
