@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Cloud, Code, Database, Server } from 'lucide-react';
@@ -36,7 +35,6 @@ const Index = () => {
         subtitle="Technische Exzellenz und strategische Weitsicht für Ihr digitales Wachstum"
         buttonText="Projekt anfragen"
         buttonLink="/kontakt"
-        backgroundImage="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3"
       />
 
       {/* Über uns Sektion */}
