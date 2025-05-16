@@ -17,9 +17,9 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Solid Background */}
+      {/* Primary-colored background (#0055FF) as specified */}
       <div className="absolute inset-0 z-0 bg-primary">
-        {/* Pattern overlay (optional) */}
+        {/* Subtle pattern overlay for visual interest */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.4)_0,_rgba(255,255,255,0)_70%)]"></div>
       </div>
 
