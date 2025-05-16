@@ -7,6 +7,8 @@ import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import Certifications from '@/components/Certifications';
+import KeyMetrics from '@/components/KeyMetrics';
+import ProcessSteps from '@/components/ProcessSteps';
 
 const Index = () => {
   // Function to handle scroll animations
@@ -38,6 +40,9 @@ const Index = () => {
         buttonText="Projekt anfragen"
         buttonLink="/kontakt"
       />
+
+      {/* Key Metrics */}
+      <KeyMetrics />
 
       {/* Über uns Sektion */}
       <section className="section-padding bg-white">
@@ -106,6 +111,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Process Steps Section */}
+      <ProcessSteps />
 
       {/* Certifications Section */}
       <Certifications />
