@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           <Link to="/kontakt" className="text-dark-light hover:text-primary font-medium transition-colors">
             Kontakt
           </Link>
-          <Link to="/kontakt" className="btn-primary">
+          <Link to="/kontakt" className="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary-hover transition-colors">
             Projekt anfragen
           </Link>
         </nav>
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link 
                 to="/kontakt" 
-                className="btn-primary text-xl"
+                className="bg-primary text-white px-6 py-3 rounded-md text-xl"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Projekt anfragen

@@ -6,6 +6,7 @@ import { Cloud, Code, Database, Server } from 'lucide-react';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import Certifications from '@/components/Certifications';
 
 const Index = () => {
   // Function to handle scroll animations
@@ -36,7 +37,6 @@ const Index = () => {
         subtitle="Technische Exzellenz und strategische Weitsicht für Ihr digitales Wachstum"
         buttonText="Projekt anfragen"
         buttonLink="/kontakt"
-        backgroundImage="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3"
       />
 
       {/* Über uns Sektion */}
@@ -106,6 +106,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Certifications Section */}
+      <Certifications />
 
       {/* Testimonials Sektion */}
       <section className="section-padding bg-white">
