@@ -30,14 +30,14 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#334FB4',
+					DEFAULT: '#1EAEDB',
 					foreground: '#FFFFFF',
-					hover: '#2A43A3',
+					hover: '#0FA0CE',
 				},
 				secondary: {
-					DEFAULT: '#F5F5F5',
-					foreground: '#333333',
-					hover: '#E5E5E5',
+					DEFAULT: '#F1F1F1',
+					foreground: '#222222',
+					hover: '#E1E1E1',
 				},
 				accent: {
 					DEFAULT: '#33C3F0',
@@ -53,9 +53,9 @@ export default {
 					light: '#F6F6F7',
 				},
 				dark: {
-					DEFAULT: '#333333',
+					DEFAULT: '#222222',
 					foreground: '#FFFFFF',
-					light: '#444444',
+					light: '#333333',
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -106,8 +106,8 @@ export default {
 				'fade-in-right': 'fade-in-right 0.6s ease-out',
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				heading: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'sans-serif'],
+				heading: ['Montserrat', 'sans-serif'],
 			},
 		},
 	},

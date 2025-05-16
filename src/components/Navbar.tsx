@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
-import { Button } from './ui/button';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-4' : 'bg-white/0 py-6'
+        isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/0 py-5'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -43,7 +42,7 @@ const Navbar: React.FC = () => {
           <Link to="/kontakt" className="text-dark-light hover:text-primary font-medium transition-colors">
             Kontakt
           </Link>
-          <Link to="/kontakt" className="bg-primary text-white px-4 py-2 text-sm rounded-md font-medium transition-all hover:bg-primary-hover">
+          <Link to="/kontakt" className="btn-primary">
             Projekt anfragen
           </Link>
         </nav>
@@ -90,7 +89,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link 
                 to="/kontakt" 
-                className="bg-primary text-white px-4 py-2 text-sm rounded-md font-medium transition-all hover:bg-primary-hover"
+                className="btn-primary text-xl"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Projekt anfragen

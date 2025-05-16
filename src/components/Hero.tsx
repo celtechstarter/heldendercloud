@@ -7,6 +7,7 @@ interface HeroProps {
   subtitle: string;
   buttonText: string;
   buttonLink: string;
+  backgroundImage?: string;
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -14,47 +15,35 @@ const Hero: React.FC<HeroProps> = ({
   subtitle,
   buttonText,
   buttonLink,
+  backgroundImage = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3',
 }) => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary">
-      {/* Background Pattern (subtle) */}
-      <div className="absolute inset-0 opacity-10">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#smallGrid)" />
-        </svg>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-dark bg-opacity-60"></div>
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 text-center px-4 max-w-5xl">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 animate-fade-in leading-tight">
+      <div className="container relative z-10 text-center px-4">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
           {title}
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto animate-fade-in leading-relaxed">
+        <p className="text-xl md:text-2xl text-white mb-10 max-w-3xl mx-auto animate-fade-in">
           {subtitle}
         </p>
         <Link
           to={buttonLink}
-          className="inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-medium bg-white text-primary rounded-md shadow-lg transition-all hover:bg-opacity-90 animate-fade-in"
+          className="btn-primary text-lg animate-fade-in"
         >
           {buttonText}
         </Link>
-      </div>
-
-      {/* Bottom Wave Shape */}
-      <div className="absolute bottom-0 left-0 w-full">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1440 100" 
-          fill="#ffffff" 
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C150,90 350,60 500,75 C650,90 800,20 1000,30 C1200,40 1350,70 1440,80 L1440,100 L0,100 Z"></path>
-        </svg>
       </div>
     </section>
   );
